@@ -31,7 +31,7 @@ public class Main {
 				break;*/
 
 			case TSmmLexer.INT_CONSTANT:
-				semanticValue = LexerHelper.lexemeToInt(token.getText());
+				semanticValue = LexerHelper.lexemeToInt(token.getText()); // Lo casteé a Object
 				break;
 			default:
 				semanticValue = token.getText();

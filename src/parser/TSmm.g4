@@ -3,23 +3,27 @@ grammar TSmm;
 program: 
        ;
 
+
 fragment
-CHAR:[a-zA-Z];
-  		 
+
+
 INT_CONSTANT: [1-9] [0-9]*
-            | '0'
-            ;
+            | '0';
 
 WHITESPACE: [ ]+ -> skip;
 
-COMMENT: '//'.*?[\n|EoF] -> skip;
+COMMENT: '//'.*? '\\r''\\n' -> skip;
 
 MULTIPLELINES_COMMENT: '/*' .*? '*/';
 
 ID: '_'?[a-zA-Z][0-9]'_';
 
-INT_LITERAL: [0-9]+;
+REAL_LITERAL: [0-9]*'.'[0-9]*;
 
-REAL_CONSTANT: [0-9]*'.'[0-9]*;
+REAL_LITERAL_WITHEXPONENT: [0-9]*'.'?[0-9]*[eE][+-]?[1-9]+;
 
-CHAR_CONSTANT: 'CHAR';
+CHAR_CONSTANT: [.];
+
+CHAR_ASCII_LITERAL:'\\[0-9]+';
+
+SPECIAL_CHARACTERS: ('\\n'|'\\t') -> skip;

@@ -1,0 +1,30 @@
+token literal names:
+null
+null
+null
+null
+null
+null
+null
+null
+'\\[0-9]+'
+null
+
+token symbolic names:
+null
+WHITESPACE
+COMMENT
+MULTIPLELINES_COMMENT
+ID
+REAL_LITERAL
+REAL_LITERAL_WITHEXPONENT
+CHAR_CONSTANT
+CHAR_ASCII_LITERAL
+SPECIAL_CHARACTERS
+
+rule names:
+program
+
+
+atn:
+[4, 1, 9, 5, 2, 0, 7, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 3, 0, 2, 1, 0, 0, 0, 2, 3, 1, 0, 0, 0, 3, 1, 1, 0, 0, 0, 0]

@@ -1,0 +1,1 @@
+Posible pregunta de examen seria operador ternario, paso de parametros por valor en arrays.

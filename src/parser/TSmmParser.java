@@ -1,4 +1,4 @@
-// Generated from /Users/juanfernandezlopez21/Desktop/3Curso/2S/DLP/lab/compilador/src/parser/TSmm.g4 by ANTLR 4.13.2
+// Generated from C:/Users/uo296143/IdeaProjects/compilador/src/parser/TSmm.g4 by ANTLR 4.13.2
 package parser;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -18,7 +18,8 @@ public class TSmmParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		INT_CONSTANT=1, WHITESPACE=2, COMMENT=3, MULTIPLELINES_COMMENT=4, ID=5, 
-		INT_LITERAL=6, REAL_CONSTANT=7, CHAR_CONSTANT=8;
+		REAL_CONSTANT=6, REAL_LITERAL_WITHEXPONENT=7, CHAR_CONSTANT=8, CHAR_ASCII_LITERAL=9, 
+		SPECIAL_CHARACTERS=10;
 	public static final int
 		RULE_program = 0;
 	private static String[] makeRuleNames() {
@@ -30,14 +31,15 @@ public class TSmmParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, null, null, null, null, null, null, null, "'CHAR'"
+			null, null, null, null, null, null, null, null, null, "'\\[0-9]+'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, "INT_CONSTANT", "WHITESPACE", "COMMENT", "MULTIPLELINES_COMMENT", 
-			"ID", "INT_LITERAL", "REAL_CONSTANT", "CHAR_CONSTANT"
+			"ID", "REAL_CONSTANT", "REAL_LITERAL_WITHEXPONENT", "CHAR_CONSTANT", 
+			"CHAR_ASCII_LITERAL", "SPECIAL_CHARACTERS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -119,7 +121,7 @@ public class TSmmParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\b\u0005\u0002\u0000\u0007\u0000\u0001\u0000\u0001\u0000\u0001"+
+		"\u0004\u0001\n\u0005\u0002\u0000\u0007\u0000\u0001\u0000\u0001\u0000\u0001"+
 		"\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0003\u0000\u0002\u0001\u0000"+
 		"\u0000\u0000\u0002\u0003\u0001\u0000\u0000\u0000\u0003\u0001\u0001\u0000"+
 		"\u0000\u0000\u0000";

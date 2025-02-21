@@ -1,16 +1,67 @@
+PROGRAMA
+========
+Un programa es una secuencia de definiciones. 
+Las definiciones pueden ser de variables o de funciones.
 
-Elementos l�xicos sensibles a may�sculas/min�sculas.
+DEFINICION DE VARIABLE
+======================
+La sintaxis de la definici�n de una variable empieza con la palabra 
+reservada "let", seguida de una lista (con al menos un elemento) de 
+identificadores separados por comas y finaliza con ":" y un tipo. 
+Las definiciones de variables terminan mediante el caracter ";"
 
-Elementos:
+DEFINICION DE FUNCION
+======================
+Las funciones se definen mediante la palabra reservada "function" el
+ identificador de la funci�n, una lista de parametros separados 
+ por comas entre "(" y ")" seguido de ":" y el tipo de retorno 
+ cuando sea necesario.
+El tipo de retorno y de los par�metros debe ser de tipo simple 
+(no se permiten ni arrays ni registros). 
+El cuerpo de la funcion va entre "{" y "}".
+El cuerpo de las funciones se compone de una secuencia de cero 
+o m�s definiciones de variables seguida de una secuencia de cero 
+o m�s sentencias.
+La funcion "main" es obligatoria, no devuelve nada, no recibe par�metros y 
+debe estar declarada en �ltimo lugar.
 
-  1 - Comentarios con // hasta el final de l�nea
-  2 - Comentarios con varias l�neas (de /* hasta */)
-  3 - Identificadores que comienzan con una letra o _ y seguidos de letra, d�gito o _
-  4 - Literales Enteros sin signo
-  5 - Literales Reales con punto decimal
-	12.3, 2., .34
-  6 - Literales Reales con formato exponente
-	34.12E-3, 3e3, 2e+5
-  7 - Literales car�cter entre '',
-  8 - Literales car�cter mediante codigo ASCII '\126'
-  9 - Dos caracteres especiales '\n' y '\t'
+TIPOS
+=====
+Los tipos simples son "int", "number" y "char".
+Los arrays se pueden crear con el constructor de tipos "[]",
+ especificando el tama�o con una constante entera, 
+ seguido de cualquier tipo.
+Se usa el constructor de tipos "record" para la creaci�n de registros. 
+Los registros no tienen identificador, y los campos son declarados
+ como variables dentro de "[" "]".
+
+SENTENCIAS
+==========
+1- La sentencia de escritura consiste en la palabra reservada "log" seguida de una lista de una o m�s expresiones separadas por comas.
+2 - La sentencia de lectura consiste en la palabra reservada "input" seguida de una lista de una o m�s expresiones separadas por comas.
+3 - Una asignaci�n est� compuesta por dos expresiones separadas por el operador "=".
+4 - La sentencia condicional "if"-"else" y la sentencia iterativa "while" siguen la sintaxis del lenguaje TypeScript: la condici�n entre par�ntesis "(" ")" y
+las sentencias del cuerpo van entre "{" "}" y solamente si hay una �nica sentencia pueden omitirse. 
+5 - La sentencia de retorno consiste en la palabra reservada "return" seguida de una <expresi�n>.
+6 - La invocaci�n a una funci�n sin retorno (se denomina procedimiento) ser� siempre una sentencia.
+Todas las sentencias excepto "if-else" y "while" finalizan con ";".
+
+EXPRESIONES
+===========
+La invocaci�n a una funci�n podr� ser tambi�n una expresi�n cuando retorne un valor.
+La conversi�n expl�cita a tipos simples (cast) se escribe entre par�ntesis '(' ')' y sigue la sintaxis <expresi�n> "as" <tipo>. 
+Las expresiones est�n formadas por:
+- Constantes enteras, reales y caracter sin signo.
+- Identificadores
+- Los siguientes operadores aplicados a una o dos expresiones (por 
+orden de precedencia descendente):
+		( )			Non associative
+		[]			Non associative
+ 		.			Left associative
+        CAST     	Non associative
+		- (unary)	Non associative
+        !			Non associative
+		* / %		Left associative
+		+ -			Left associative
+	> >= < <= != ==	Left associative
+		&& ||		Left associative
